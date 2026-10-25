@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Syne', sans-serif;
+  --font-editorial: 'Fraunces', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-acid: #ccff00;
+  --color-surreal-pink: #ff2a85;
+  --color-ultramarine: #1833ff;
+  --color-mystic-purple: #8b5cf6;
+  --color-dark-obsidian: #090a0f;
+  --color-dark-surface: #12131c;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-2deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    filter: blur(40px);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(60px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom surrealist glass & glow utility classes */
+.surreal-card {
+  background: rgba(18, 19, 28, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.surreal-card:hover {
+  border-color: rgba(204, 255, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px -10px rgba(204, 255, 0, 0.15);
+}
+
+.maximalist-border {
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 4px 4px 0px 0px rgba(204, 255, 0, 0.9);
+}
+
+.maximalist-border:hover {
+  box-shadow: 6px 6px 0px 0px rgba(255, 42, 133, 0.95);
+}
